@@ -12,10 +12,10 @@ DynamoDB is a NoSQL database.  The design of the schema is based on the access p
 
 ```mermaid
 erDiagram
-          RETAILER ||..|| STORE : has
-          STORE ||--|| PRODUCT : has
-          PRODUCT ||--|| PRODUCT-CATEGORY : contains
-          
+          RETAILER ||--|{ STORE : has
+          STORE ||--|{ PRODUCT : has
+          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+
 ```
 
 Example AWS CLI command to create DynamoDB table from JSON file.
