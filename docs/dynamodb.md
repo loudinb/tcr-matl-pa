@@ -15,7 +15,6 @@ erDiagram
           RETAILER ||--|{ STORE : has
           STORE ||--|{ PRODUCT : has
           PRODUCT-CATEGORY ||--|{ PRODUCT : contains
-
 ```
 
 Example AWS CLI command to create DynamoDB table from JSON file.
