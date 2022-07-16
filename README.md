@@ -9,3 +9,8 @@ The application is deployed to AWS using a serverless framework, the components 
 * [AWS Lambda](https://aws.amazon.com/lambda/)
 * [Amazon API Gateway](https://aws.amazon.com/api-gateway/)
 * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/)
+
+### AWS Credentials and Configuration
+
+You must run `aws config` to set up your AWS CLI, for more information see [Quick configuration with aws confgiure](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config).
+
