@@ -4,10 +4,9 @@ D
 erDiagram
           RETAILER ||--|{ STORE : has
           RETAILER {
-            string retailer_id
+            int retailer_id
             string name
           }
-          STORE ||--|{ PRODUCT : has
           STORE {
             string store_id
             string retailer_id
