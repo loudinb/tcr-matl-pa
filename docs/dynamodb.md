@@ -10,7 +10,13 @@ DynamoDB is a NoSQL database.  The design of the schema is based on the access p
 | Get price history of a given product within a given date range |
 | Get price history of a given product at a retailer within a given date range |
 
-
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
 
 Example AWS CLI command to create DynamoDB table from JSON file.
 
