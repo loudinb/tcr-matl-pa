@@ -1,3 +1,13 @@
+D
+
+```mermaid
+erDiagram
+          RETAILER ||--|{ STORE : has
+          STORE ||--|{ PRODUCT : has
+          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+```
+
+
 DynamoDB is a NoSQL database.  The design of the schema is based on the access patterns that are required.   For the material price and availability data, the important access patterns are:
 
 | Access Pattern |
@@ -9,13 +19,6 @@ DynamoDB is a NoSQL database.  The design of the schema is based on the access p
 | Find stores with the lowest price for a given product at all stores with specified zip code |
 | Get price history of a given product within a given date range |
 | Get price history of a given product at a retailer within a given date range |
-
-```mermaid
-erDiagram
-          RETAILER ||--|{ STORE : has
-          STORE ||--|{ PRODUCT : has
-          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
-```
 
 Example AWS CLI command to create DynamoDB table from JSON file.
 
