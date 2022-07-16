@@ -3,8 +3,41 @@ D
 ```mermaid
 erDiagram
           RETAILER ||--|{ STORE : has
+          RETAILER {
+            string retailer_id
+            string name
+          }
           STORE ||--|{ PRODUCT : has
-          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+          STORE {
+            string store_id
+            string retailer_id
+            string name
+            string zip_code
+          }
+          STORE ||--|{ INVENTORY : has
+          INVENTORY {
+            string sku
+            string product_id
+            int available_quantity
+            float unit_price
+            datetime last_update
+          }
+          INVENTORY ||--|{ PRODUCT : has
+          PRODUCT {
+            string product_id
+            string category_id
+            string description
+            float length
+            float width
+            float height
+          }
+          PRODUCT ||--|{ CATEGORY : belongs
+          CATEGORY {
+            string category_id
+            string name
+          }
+
+          
 ```
 
 
