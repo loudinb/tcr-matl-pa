@@ -1,0 +1,6 @@
+awscli
+requests
+beautifulsoup4
+lxml
+selenium
+ipykernel
