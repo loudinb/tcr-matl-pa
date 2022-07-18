@@ -3,13 +3,13 @@ D
 ```mermaid
 erDiagram
           RETAILER }|--|{ PRODUCT : buy
-          PRODUCT }|--|| PRODUCT-TYPE : classify
+          PRODUCT-TYPE ||--|{ PRODUCT : classify
           PRODUCT }|--|{ INVENTORY : stock
           STORE ||--O{ INVENTORY : sell
           RETAILER ||--|{ STORE : have
           RETAILER {
-            retailer_id
-            name
+            string retailer_id
+            string name
           }
           STORE {
             store_id
@@ -30,8 +30,8 @@ erDiagram
           }
           INVENTORY {
             store_id
-            sku_id
             product_id
+            sku_id
             quantity
             price
             datetime
