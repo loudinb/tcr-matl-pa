@@ -3,11 +3,40 @@ D
 ```mermaid
 erDiagram
           RETAILER }|--|{ PRODUCT : buy
-          PRODUCT }|--|| CATEGORY : group
-          PRODUCT ||--|{ ATTRIBUTE : has
+          PRODUCT }|--|| PRODUCT-TYPE : classify
           PRODUCT }|--|{ INVENTORY : stock
           STORE ||--O{ INVENTORY : sell
-          RETAILER ||--|{ STORE : has  
+          RETAILER ||--|{ STORE : have
+          RETAILER {
+            retailer_id
+            name
+          }
+          STORE {
+            store_id
+            retailer_id
+            name
+            zip_code
+          }
+          PRODUCT {
+            product_id
+            product-type_id
+            name
+            description
+          }
+          PRODUCT-TYPE {
+            product-type_id
+            name
+            description
+          }
+          INVENTORY {
+            store_id
+            sku_id
+            product_id
+            quantity
+            price
+            datetime
+          }
+
 ```
 
 retailers have stores
