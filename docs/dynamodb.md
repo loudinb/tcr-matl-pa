@@ -12,29 +12,29 @@ erDiagram
             string name
           }
           STORE {
-            store_id
-            retailer_id
-            name
-            zip_code
+            string store_id
+            string retailer_id
+            string name
+            string zip_code
           }
           PRODUCT {
-            product_id
-            product-type_id
-            name
-            description
+            string product_id
+            string product-type_id
+            string name
+            string description
           }
           PRODUCT-TYPE {
-            product-type_id
-            name
-            description
+            string product-type_id
+            string name
+            string description
           }
           INVENTORY {
-            store_id
-            product_id
-            sku_id
-            quantity
-            price
-            datetime
+            string store_id
+            string product_id
+            string sku_id
+            string quantity
+            string price
+            string datetime
           }
 
 ```
