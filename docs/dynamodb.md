@@ -2,11 +2,11 @@ D
 
 ```mermaid
 erDiagram
-          RETAILER }|--|{ PRODUCT : buy
           STORE ||--O{ INVENTORY : sell
           INVENTORY }|--|{ PRODUCT : "contains"
           PRODUCT }|--|| PRODUCT-TYPE : "classified by"
           RETAILER ||--|{ STORE : have
+          RETAILER }|--|{ PRODUCT : buy
           RETAILER {
             string retailer_id
             string name
