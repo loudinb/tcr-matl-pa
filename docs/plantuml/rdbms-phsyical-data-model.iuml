@@ -1,0 +1,46 @@
+@startuml
+hide circle
+hide empty members
+skinparam linetype ortho
+entity RETAILER {
+    retailer_id : int <<auto>>
+    __
+    name : string
+}
+entity STORE {
+    store_id : string
+    __
+    retailer_id : int <<FK>>
+    name : string
+    zip_code : string
+}
+entity PRODUCT {
+    product_id : int <<auto>>
+    __
+    retailer_id : int <<FK>>
+    sku : string
+    name : string
+    description : string
+    url: string
+    image: file
+}
+entity CATEGORY {
+    category_id : int <<auto>>
+    __
+    name : string
+}
+entity INVENTORY {
+    product_id : int <<FK>>
+    store_id : string <<FK>>
+    scanned_at : tiemstamp
+    quantity : int
+    price : float
+}
+STORE ||--O{ INVENTORY
+INVENTORY }|--|{ PRODUCT
+PRODUCT }|--|| CATEGORY
+RETAILER ||--|{ STORE
+RETAILER ||--|{ PRODUCT
+RETAILER -[hidden] STORE
+
+@enduml

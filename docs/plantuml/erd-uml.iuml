@@ -1,8 +1,0 @@
-@startuml
-skinparam linetype ortho
-STORE ||--O{ INVENTORY
-INVENTORY }|--|{ PRODUCT
-PRODUCT }|--|| PRODUCTTYPE
-RETAILER ||--|{ STORE
-RETAILER }|--|{ PRODUCT
-@enduml

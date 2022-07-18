@@ -1,5 +1,8 @@
-D
-![xuml](/out/docs/plantuml/erd-uml.png)
+This application uses Amazon DynamoDB for the database, DynamoDB is a fully managed NoSQL database.  NoSQL databases are optimized to query for items by a known key, so it's important to plan your application's data access patterns and design your tables around them.
+
+The data modeling exercise is slightly more complicated.  To start, you create an entity relationship diagram to help you understand the different types of data in your application and their relationship to one another.
+
+![xuml](/out/docs/plantuml/rdbms-physical-data-model.png)
 
 retailers have stores
 stores sell products
@@ -23,3 +26,6 @@ Example AWS CLI command to create DynamoDB table from JSON file.
 ```
 aws dynamodb create-table --cli-input-json file://create-table-materials.json --region us-east-1
 ```
+
+https://emshea.com/post/part-1-dynamodb-single-table-design
+
