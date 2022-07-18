@@ -1,5 +1,5 @@
 D
-![xuml](out/docs/plantuml/erd-uml.png)
+![xuml](/out/docs/plantuml/erd-uml.png)
 
 retailers have stores
 stores sell products
