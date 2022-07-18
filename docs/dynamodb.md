@@ -3,9 +3,9 @@ D
 ```mermaid
 erDiagram
           RETAILER }|--|{ PRODUCT : buy
-          INVENTORY }|--|{ PRODUCT : "stock of"
-          PRODUCT }|--|| PRODUCT-TYPE : "classified by"
           STORE ||--O{ INVENTORY : sell
+          INVENTORY }|--|{ PRODUCT : "contains"
+          PRODUCT }|--|| PRODUCT-TYPE : "classified by"
           RETAILER ||--|{ STORE : have
           RETAILER {
             string retailer_id
