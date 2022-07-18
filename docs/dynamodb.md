@@ -1,46 +1,5 @@
 D
-![xuml](images/docs/plantuml/erd-uml/erd-uml.png)
-
-D
-
-```mermaid
-erDiagram
-          STORE ||--O{ INVENTORY : sell
-          INVENTORY }|--|{ PRODUCT : "contains"
-          PRODUCT }|--|| PRODUCT-TYPE : "classified by"
-          RETAILER ||--|{ STORE : have
-          RETAILER }|--|{ PRODUCT : buy
-          RETAILER {
-            string retailer_id
-            string name
-          }
-          STORE {
-            string store_id
-            string retailer_id
-            string name
-            string zip_code
-          }
-          PRODUCT {
-            string product_id
-            string product-type_id
-            string name
-            string description
-          }
-          PRODUCT-TYPE {
-            string product-type_id
-            string name
-            string description
-          }
-          INVENTORY {
-            string store_id
-            string product_id
-            string sku_id
-            string quantity
-            string price
-            string datetime
-          }
-
-```
+![xuml](out/docs/plantuml/erd-uml.png)
 
 retailers have stores
 stores sell products
