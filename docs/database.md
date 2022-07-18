@@ -1,15 +1,10 @@
-This application uses Amazon DynamoDB for the database, DynamoDB is a fully managed NoSQL database.  NoSQL databases are optimized to query for items by a known key, so it's important to plan your application's data access patterns and design your tables around them.
+This application uses Amazon DynamoDB for the database, it is a fully managed NoSQL database.  NoSQL databases are optimized to query for items by a known key, so it's important to plan your application's data access patterns and design your tables around them.
 
 The data modeling exercise is slightly more complicated.  To start, you create an entity relationship diagram to help you understand the different types of data in your application and their relationship to one another.
 
 ![xuml](/out/docs/plantuml/rdbms-physical-data-model.png)
 
-retailers have stores
-stores sell products
-products stocked in inventory
-products belong to category
-
-DynamoDB is a NoSQL database.  The design of the schema is based on the access patterns that are required.   For the material price and availability data, the important access patterns are:
+The design of the schema is based on the access patterns that are required.   For the product price and availability data, the important access patterns are:
 
 | Access Pattern |
 |:---:|

@@ -36,12 +36,11 @@ entity ON_HAND_INVENTORY {
     quantity : int
     price : float
 }
-STORE ||--|{ ON_HAND_INVENTORY
-ON_HAND_INVENTORY }|--|{ PRODUCT
-PRODUCT }|--|| CATEGORY
-RETAILER ||--|{ STORE
-RETAILER ||--|{ PRODUCT
-''' forcing the diagram layout
-RETAILER -[hidden] STORE
-PRODUCT -[hidden] CATEGORY
+STORE ||--|{ ON_HAND_INVENTORY : have >
+ON_HAND_INVENTORY }|--|{ PRODUCT : of >
+PRODUCT }|--|| CATEGORY : grouped >
+RETAILER ||--|{ STORE : have >
+RETAILER ||--|{ PRODUCT : purchase >
+'' forcing the diagram layout
+''PRODUCT -[hidden] CATEGORY
 @enduml
