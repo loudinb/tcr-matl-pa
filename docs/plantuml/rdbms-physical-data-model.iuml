@@ -29,15 +29,15 @@ entity CATEGORY {
     __
     name : string
 }
-entity INVENTORY {
+entity ON_HAND_INVENTORY {
     product_id : int <<FK>>
     store_id : string <<FK>>
     scanned_at : tiemstamp
     quantity : int
     price : float
 }
-STORE ||--|{ INVENTORY
-INVENTORY }|--|{ PRODUCT
+STORE ||--|{ ON_HAND_INVENTORY
+ON_HAND_INVENTORY }|--|{ PRODUCT
 PRODUCT }|--|| CATEGORY
 RETAILER ||--|{ STORE
 RETAILER ||--|{ PRODUCT
