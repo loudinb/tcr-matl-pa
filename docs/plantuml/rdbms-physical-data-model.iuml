@@ -36,11 +36,12 @@ entity INVENTORY {
     quantity : int
     price : float
 }
-STORE ||--O{ INVENTORY
+STORE ||--|{ INVENTORY
 INVENTORY }|--|{ PRODUCT
 PRODUCT }|--|| CATEGORY
 RETAILER ||--|{ STORE
 RETAILER ||--|{ PRODUCT
+''' forcing the diagram layout
 RETAILER -[hidden] STORE
-
+PRODUCT -[hidden] CATEGORY
 @enduml
