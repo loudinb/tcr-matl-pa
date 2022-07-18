@@ -1,0 +1,28 @@
+{
+    "TableName": "materials",
+    "KeySchema": [
+        {
+            "AttributeName": "AttributeName",
+            "KeyType": "HASH"
+        },
+        {
+            "AttributeName": "AttributeName",
+            "KeyType": "RANGE"
+        }
+    ],
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "AttributeName",
+            "AttributeType": "S"
+        }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+    },
+    "StreamSpecification": {
+        "StreamEnabled": false
+    },
+    "TableClass": "STANDARD"
+}

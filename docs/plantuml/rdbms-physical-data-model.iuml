@@ -1,0 +1,46 @@
+@startuml
+hide circle
+hide empty members
+skinparam linetype ortho
+entity RETAILER {
+    retailer_id : int <<auto>>
+    __
+    name : string
+}
+entity STORE {
+    store_id : string
+    __
+    retailer_id : int <<FK>>
+    name : string
+    zip_code : string
+}
+entity PRODUCT {
+    product_id : int <<auto>>
+    __
+    retailer_id : int <<FK>>
+    sku : string
+    name : string
+    product_page_url: string
+    image: file
+    description: string
+}
+entity CATEGORY {
+    category_id : int <<auto>>
+    __
+    name : string
+}
+entity ON_HAND_INVENTORY {
+    product_id : int <<FK>>
+    store_id : string <<FK>>
+    scanned_at : tiemstamp
+    quantity : int
+    price : float
+}
+STORE ||--|{ ON_HAND_INVENTORY : have >
+ON_HAND_INVENTORY }|--|{ PRODUCT : of >
+PRODUCT }|--|| CATEGORY : grouped >
+RETAILER ||--|{ STORE : have >
+RETAILER ||--|{ PRODUCT : purchase >
+'' forcing the diagram layout
+''PRODUCT -[hidden] CATEGORY
+@enduml
