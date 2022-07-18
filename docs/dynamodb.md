@@ -1,5 +1,5 @@
 D
-![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/loudinb/tcr-matl-pa/dev/docs/plantuml/erd-uml.iuml)
+![xuml](docs/images/docs/plantuml/erd-uml/red-uml.png)
 
 D
 
