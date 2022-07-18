@@ -1,10 +1,7 @@
 @startuml
-actor client
-node app
-node car
-node tshirt
-
-car -> app
-app -> client
-client -> tshirt
+STORE ||--O{ INVENTORY
+INVENTORY }|--|{ PRODUCT
+PRODUCT }|--|| PRODUCT-TYPE
+RETAILER ||--|{ STORE
+RETAILER }|--|{ PRODUCT
 @enduml
