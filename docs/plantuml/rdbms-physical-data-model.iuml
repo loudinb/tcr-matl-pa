@@ -20,9 +20,9 @@ entity PRODUCT {
     retailer_id : int <<FK>>
     sku : string
     name : string
-    description : string
-    url: string
+    product_page_url: string
     image: file
+    description: string
 }
 entity CATEGORY {
     category_id : int <<auto>>
