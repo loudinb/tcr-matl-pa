@@ -1,5 +1,5 @@
 D
-![xuml](../docs/images/docs/plantuml/erd-uml/red-uml.png)
+![xuml](../images/docs/plantuml/erd-uml/erd-uml.png)
 
 D
 
