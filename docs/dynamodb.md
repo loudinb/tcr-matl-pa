@@ -4,7 +4,7 @@ D
 erDiagram
           RETAILER }|--|{ PRODUCT : buy
           PRODUCT }|--|{ INVENTORY : stock
-          PRODUCT-TYPE ||--|{ PRODUCT : classify
+          PRODUCT |}--|| PRODUCT-TYPE : classify
           STORE ||--O{ INVENTORY : sell
           RETAILER ||--|{ STORE : have
           RETAILER {
