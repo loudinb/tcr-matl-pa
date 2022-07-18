@@ -3,8 +3,8 @@ D
 ```mermaid
 erDiagram
           RETAILER }|--|{ PRODUCT : buy
-          PRODUCT }|--|{ INVENTORY : stock
-          PRODUCT }|--|| PRODUCT-TYPE : classify
+          INVENTORY }|--|{ PRODUCT : "stock of"
+          PRODUCT }|--|| PRODUCT-TYPE : "classified by"
           STORE ||--O{ INVENTORY : sell
           RETAILER ||--|{ STORE : have
           RETAILER {
