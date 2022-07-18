@@ -7,7 +7,7 @@ erDiagram
           PRODUCT ||--|{ ATTRIBUTE : has
           PRODUCT }|--|{ INVENTORY : stock
           STORE ||--O{ INVENTORY : sell
-          RETAILER ||==|{ STORE : has  
+          RETAILER ||--|{ STORE : has  
 ```
 
 retailers have stores
