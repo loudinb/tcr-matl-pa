@@ -2,43 +2,18 @@ D
 
 ```mermaid
 erDiagram
-          RETAILER ||--|{ STORE : has
-          RETAILER {
-            int retailer_id
-            string name
-          }
-          STORE {
-            string store_id
-            string retailer_id
-            string name
-            string zip_code
-          }
-          STORE ||--|{ INVENTORY : has
-          INVENTORY {
-            string sku
-            string product_id
-            int available_quantity
-            float unit_price
-            datetime last_update
-          }
-          INVENTORY ||--|{ PRODUCT : has
-          PRODUCT {
-            string product_id
-            string category_id
-            string description
-            float length
-            float width
-            float height
-          }
-          PRODUCT ||--|{ CATEGORY : belongs
-          CATEGORY {
-            string category_id
-            string name
-          }
-
-          
+          RETAILER }|--|{ PRODUCT : buy
+          PRODUCT }|--|| CATEGORY : group
+          PRODUCT ||--|{ ATTRIBUTE : has
+          PRODUCT }|--|{ INVENTORY : stock
+          STORE ||--O{ INVENTORY : sell
+          RETAILER ||==|{ STORE : has  
 ```
 
+retailers have stores
+stores sell products
+products stocked in inventory
+products belong to category
 
 DynamoDB is a NoSQL database.  The design of the schema is based on the access patterns that are required.   For the material price and availability data, the important access patterns are:
 
