@@ -10,8 +10,8 @@ ARG USER_GID=$USER_UID
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends vim wget curl git zsh \
     build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev \
-    libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev \
-    ca-certificates
+    libssl-dev libreadline-dev libffi-dev libbz2-dev \
+    ca-certificates less groff unzip
 
 # ca certification update
 RUN update-ca-certificates
@@ -26,6 +26,11 @@ RUN ln -s /usr/local/bin/pip3.9 /usr/bin/pip
 
 # Python packages
 # RUN pip install <package>
+
+ADD "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" /tmp/awscliv2.zip
+RUN unzip /tmp/awscliv2.zip -d /tmp/awscliv2
+RUN /tmp/awscliv2/aws/install
+RUN rm -rf /tmp/awscliv2
 
 # Create the user
 RUN groupadd --gid ${USER_UID} ${USERNAME} \
@@ -47,3 +52,6 @@ RUN sed -i 's/robbyrussell/eastwood/g' ~/.zshrc
 #COPY requirements.txt /tmp/pip-tmp/
 #RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
 #   && rm -rf /tmp/pip-tmp
+
+
+
